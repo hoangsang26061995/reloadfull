@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Trang tự động reload</title>
+  <!-- Meta tag reload sau 30 giây -->
+  <meta http-equiv="refresh" content="30" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+  <h1>Trang này sẽ tự động reload sau mỗi 30 giây</h1>
+  <p id="time"></p>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      document.getElementById('time').textContent = 'Bây giờ là: ' + now.toLocaleString();
+    }
+    updateTime();
+    setInterval(updateTime, 1000); // Cập nhật thời gian mỗi giây
+  </script>
+</body>
+</html>
